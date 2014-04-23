@@ -6,7 +6,11 @@ body { margin: 0; }
 	overflow:hidden;
 	overflow-y:auto;
 }
-#gauche { left: 0; right:50%;}
+
+#gauche { 
+left: 0; 
+right:50%;
+}
 
 
 #droite {
@@ -16,16 +20,28 @@ body { margin: 0; }
 	color:white;
 }
 
-.content { margin: 50px; }
+.content { 
+margin: 30px 30px 30px 30px; 
+}
 
-		.scroll-pane
-			{
-				width: 100%;
-				height: 100%;
-				overflow: auto;
-			}
-			.horizontal-only
-			{
-				height: auto;
-				max-height: 200px;
-			}
+h1
+{
+font-family:PxGrotesk-Bold;
+font-size:60px;
+text-align:center;
+line-height: 55px;	
+}	
+
+/* CODE SCROLL-BAR */
+
+.scroll-pane
+{
+width: 100%;
+height: 100%;
+overflow: auto;
+}
+.horizontal-only
+{
+height: auto;
+max-height: 200px;
+}

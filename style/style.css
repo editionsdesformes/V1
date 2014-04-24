@@ -18,14 +18,35 @@ body { margin: 0; }
 
 .content { margin: 50px; }
 
-		.scroll-pane
-			{
-				width: 100%;
-				height: 100%;
-				overflow: auto;
-			}
-			.horizontal-only
-			{
-				height: auto;
-				max-height: 200px;
-			}
+
+/**
+ * SCROLLPANE
+ */
+ .scroll-pane{width: 100%;height: 100%;overflow: auto;overflow-x:hidden; }
+ .horizontal-only{height: auto;max-height: 200px;}
+ /* si on veut avoir les 2 barres de scoll au centre remplacer droite par gauche si on les veux de chaque côté */
+ #gauche .jspVerticalBar{left: 0;border-right: solid 1px black;}
+ #gauche .jspTrack{background: black;}
+ #gauche .jspDrag{background: white;}
+ #droite .jspVerticalBar{border-left: solid 1px white;}
+ #droite .jspTrack{background: white;}
+ #droite .jspDrag{background: black;}
+ .jspVerticalBar{width: 12px;}
+
+
+/**
+ * GLOBAL
+ */
+
+
+ .container{
+ 	margin: 40px;
+ }
+
+ h1
+ {
+ 	font-family:PxGrotesk-Bold;
+ 	font-size:60px;
+ 	text-align:center;
+ 	line-height: 55px;	
+ }	

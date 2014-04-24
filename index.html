@@ -31,26 +31,6 @@
 
 <script type="text/javascript" id="sourcecode">
 
-	
-	// 
-	// 
-	/*$(document).ready(function(){
-		console.log('ok');
-
-
-		$('nav a').each(function(){
-
-			$(this).click(function(event){
-
-				console.log($(this).attr('href'));
-				$('#droite .content').scrollTo( $(this).attr('href'), 1000 );
-
-				event.preventDefault();
-			});
-
-		});
-	});*/
-
 
 	// SI ON VEUT UN REDIMENTIONNEMENT AUTOMATIQUE LE SCRIPT EST UN PEU PLUS COMPLEXE :
 	// cf http://jscrollpane.kelvinluck.com/fullpage_scroll.html
@@ -69,6 +49,7 @@
 					
 					$('.scroll-pane').jScrollPane();
 
+					// POUR GERER LE SCROLL AUTOMATIQUE
 					var pane = $('#droite .scroll-pane');
 					var api  = pane.data('jsp');
 
@@ -79,6 +60,7 @@
 						});
 
 					});
+					// FIN DU SCROLL
 					
 					isResizing = false;
 					

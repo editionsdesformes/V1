@@ -4,13 +4,6 @@
 <meta charset="UTF-8">
 
 <title>Éditions des formes</title>
-
-<!-- script scroll ancres -->
-
-<script src="js/jquery.js" type="text/javascript"></script><!-- Insertion de la bibliotheque jQuery -->
-<script type="text/javascript" src="js/localscroll/jquery.localscroll.js"></script>
-<script type="text/javascript" src="js/localscroll/jquery.scrollTo.js"></script>
-<script type="text/javascript" src="js/lancement.js"></script><!-- permet le lancement de la fonction de scroll -->
     
 <!-- WebInk -->
 
@@ -19,30 +12,47 @@
 
 
 <!-- styles needed by jScrollPane -->
-<link type="text/css" href="style/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+<link type="text/css"  href="style/jquery.jscrollpane.css" rel="stylesheet" media="all" />
 <link rel="stylesheet" href="style/style.css" />
 
         
 <!-- latest jQuery direct from google's CDN -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-</script>
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+<script type="text/javascript" src="script/jquery-1.11.0.min.js" ></script><!-- Insertion de la bibliotheque jQuery -->
+<script src="script/jquery-migrate-1.2.1.min.js"></script>
 
 <!-- the mousewheel plugin - optional to provide mousewheel support -->
 <script type="text/javascript" src="script/jquery.mousewheel.js"></script>
 
 <!-- the jScrollPane script -->
 <script type="text/javascript" src="script/jquery.jscrollpane.min.js"></script>
+<!-- script scroll ancres -->
+
+
 <script type="text/javascript" id="sourcecode">
-	/*$(function()
-	{
-		$('.scroll-pane').jScrollPane();
+
+	
+	// 
+	// 
+	/*$(document).ready(function(){
+		console.log('ok');
 
 
+		$('nav a').each(function(){
 
-	});
-*/
+			$(this).click(function(event){
 
-	// SI ON VEUR UN REDIMENTIONNEMENT AUTOMATIQUE LE SCRIPT EST UN PEU PLUS COMPLEXE :
+				console.log($(this).attr('href'));
+				$('#droite .content').scrollTo( $(this).attr('href'), 1000 );
+
+				event.preventDefault();
+			});
+
+		});
+	});*/
+
+
+	// SI ON VEUT UN REDIMENTIONNEMENT AUTOMATIQUE LE SCRIPT EST UN PEU PLUS COMPLEXE :
 	// cf http://jscrollpane.kelvinluck.com/fullpage_scroll.html
 	$(function()
 	{
@@ -56,7 +66,19 @@
 				if (!isResizing) {
 					isResizing = true;
 
+					
 					$('.scroll-pane').jScrollPane();
+
+					var pane = $('#droite .scroll-pane');
+					var api  = pane.data('jsp');
+
+					$('nav a').each(function(){
+
+						$(this).click(function(event){
+							api.scrollToElement( $(this).attr('href'), true, true);
+						});
+
+					});
 					
 					isResizing = false;
 					
@@ -72,30 +94,30 @@
 <body>
 
 <div id="gauche" class="panel">
-	<div class="scroll-pane" class="content">
+	<div class="scroll-pane" class="content pane-gauche">
 		<div class="container">
-		<h1>Éditions </br>des formes</h1>
+		<h1>Éditions<br>des formes</h1>
         
-<div class="soustitre">
-INDEX        
-</div>
+		<div class="soustitre">
+		INDEX        
+		</div>
 
-<nav>
-	<ol>
-		<li><a href="#sms">s.m.s 5</a>
+		<nav>
 			<ol>
-            	<li>Feuilleter/Scroller
-                <li>Livre
-            </ol>    
-        </li>
-        <li>internet/451
-		<li>mémoire
-</ol>
-</nav>   
+				<li><a href="#sms">s.m.s 5</a>
+					<ol>
+						<li><a href="#feuilleter">Feuilleter/Scroller</a></li>
+						<li>Livre</li>
+					</ol>    
+				</li>
+				<li>internet/451</li>
+				<li>mémoire</li>
+			</ol>
+		</nav>   
 
-<div class="soustitre">
-À PROPOS        
-</div>
+		<div class="soustitre">
+		À PROPOS        
+		</div>
      
 		<p class="textegauche">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
 		<p class="textegauche">pat magna a lorem varius, non tincidunt dolor mollis. Morbi molestie diam ac elit adipiscing congue. Proin purus purus, semper sit amet metus sed, hendrerit condimentum lectus. Quisque accumsan euismod erat accumsan semper. Pellentesque dictum dictum mi, in tempus quam scelerisque sit amet. Etiam blandit sapien ut velit fermentum tincidunt. Mauris quis gravida justo. Etiam vehicula arcu est. Ut dapibus quam ac euismod imperdiet. Cras tortor augue, pharetra et sapien eu, ullamcorper aliquam ligula.Integer urna mi, auctor non cursus a, sodales quis felis. Morbi faucibus, libero quis commodo lobortis, mi neque commodo felis, quis tincidunt nibh massa vel diam. Curabitur sit amet massa odio. Sed sit amet sapien porttitor, euismod velit rutrum, sollicitudin nunc.
@@ -119,7 +141,7 @@ Valentin Robinet : 06.77.55.16.57
 </div>
 
 <div id="droite" class="panel">
-	<div class="scroll-pane" class="content">
+	<div class="scroll-pane" class="content pane-droite">
 		<div class="container">
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
 		<p>pat magna a lorem varius, non tincidunt dolor mollis. Morbi molestie diam ac elit adipiscing congue. Proin purus purus, semper sit amet metus sed, hendrerit condimentum lectus. Quisque accumsan euismod erat accumsan semper. Pellentesque dictum dictum mi, in tempus quam scelerisque sit amet. Etiam blandit sapien ut velit fermentum tincidunt. Mauris quis gravida justo. Etiam vehicula arcu est. Ut dapibus quam ac euismod imperdiet. Cras tortor augue, pharetra et sapien eu, ullamcorper aliquam ligula. </p>
@@ -145,11 +167,11 @@ Valentin Robinet : 06.77.55.16.57
 		<p>atis. Mauris dictum vestibulum eros, ac consequat libero fringilla eget. Vestibulum dictum, nisi non ullamcorper varius, erat turpis viverra leo, sed imperdiet est urna vitae dolor. Sed ligula libero, dapibus ut ipsum a, pretium facilisis sem. Suspendisse blandit sit amet lacus at tincidunt. Sed sed dui eu ligula mollis lobortis. Phasellus non luctus erat.
 			
 			Curabitur id fermentum purus, eu mattis orci. Fusce iacu</p>
-		<p id="sms">lis magna id justo gravida cursus. Duis nec venenatis mauris. Etiam eget facilisis tortor. Aenean bibendum accumsan convallis. Ut pretium mollis ante vel cursus. Fusce porta diam risus. Vivamus gravida felis sit amet urna pretium posuere. Ut convallis, lectus semper tempus rutrum, nisl ante facilisis sapien, quis vulputate quam sapien in lorem. Cras convallis, odio convallis vehicula iaculis, urna elit pulvinar leo, id ultrices nibh felis eget diam. Donec suscipit vel mi vitae iaculis. Proin vestibulum volutpat rhoncus. Duis semper sollicitudin orci ut dictu</p>
+		<p id="sms">SMS lis magna id justo gravida cursus. Duis nec venenatis mauris. Etiam eget facilisis tortor. Aenean bibendum accumsan convallis. Ut pretium mollis ante vel cursus. Fusce porta diam risus. Vivamus gravida felis sit amet urna pretium posuere. Ut convallis, lectus semper tempus rutrum, nisl ante facilisis sapien, quis vulputate quam sapien in lorem. Cras convallis, odio convallis vehicula iaculis, urna elit pulvinar leo, id ultrices nibh felis eget diam. Donec suscipit vel mi vitae iaculis. Proin vestibulum volutpat rhoncus. Duis semper sollicitudin orci ut dictu</p>
 		<p>m. Sed varius laoreet sapien vel egestas. Etiam sagittis consequat mollis.
 			
 			Pellentesque a sapien quam. Quisque laoreet sed ipsum sit amet congue. Donec pulvinar sagittis ligula, feugiat accumsan mi pretium a. Aenean vitae interdum enim, id iaculis arcu. Mauris non lobortis dui, quis volutpat est. Nam elementum, arcu a ullamcorper malesuada, metus nunc blandit justo, at convallis nibh arcu ut mi. Praesent ele</p>
-		<p>ifend sollicitudin nisi, ut iaculis massa lobortis sit amet. Donec non metus id lorem eleifend rutrum non blandit quam. Curabitur scelerisque cursus purus vitae accumsan. Donec euismod volutpat velit eget hendrerit. Pellentesque in ullamcorper neque.
+		<p id="feuilleter">Feuilleter scroller !ifend sollicitudin nisi, ut iaculis massa lobortis sit amet. Donec non metus id lorem eleifend rutrum non blandit quam. Curabitur scelerisque cursus purus vitae accumsan. Donec euismod volutpat velit eget hendrerit. Pellentesque in ullamcorper neque.
 			
 			Nam iaculis consectetur sem, vel malesu</p>
 		<p>ada justo sagittis at. Duis malesuada nisl eu ultrices faucibus. Duis mattis mauris nec elementum sollicitudin. Maecenas congue sapien congue bibendum rhoncus. Mauris sed quam tincidunt, sollicitudin sapien a, porta justo. Maecenas tempor mollis mauris, porttitor vulputate est egestas vel. Maecenas nec ullamcorper lectus, nec ornare eros. Quisque a erat turpis. Curabitur non interdum nibh. </p>

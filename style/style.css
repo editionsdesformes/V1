@@ -40,13 +40,33 @@ body { margin: 0; }
 
 
  .container{
- 	margin: 40px;
+ 	margin: 30px;
  }
 
  h1
  {
  	font-family:PxGrotesk-Bold;
  	font-size:60px;
- 	text-align:center;
+ 	text-align:left;
  	line-height: 55px;	
  }	
+ 
+.soustitre{
+	font-family:PxGroteskRegular;
+ 	font-size:18px;
+}
+
+.textegauche{
+	font-family:PxGroteskRegular;
+ 	font-size:18px;
+	margin-left:30px;
+	max-width:500px;
+}
+
+#img1, #img2, #img3, #img4, #img5, #img6 {
+    height: 100px;
+}
+ 
+#espace-bas {
+    height: 240px;
+}

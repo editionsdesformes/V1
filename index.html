@@ -31,6 +31,33 @@
 
 <script type="text/javascript" id="sourcecode">
 
+	$(document).ready(function(){
+		manifeste();
+
+		$('.showManifest').click(function(event){
+			event.preventDefault();
+
+			manifeste();
+		});
+	});
+
+
+	function manifeste(){
+		var leftPos = Math.random() * ($(document).width() - $('#manifeste').width());
+		var topPos = Math.random() * ($(document).height() - $('#manifeste').height());
+		var angle = Math.random() * 90 - 45;
+
+		$('#manifeste')
+		.show()
+		.css('left',leftPos)
+		.css('top',topPos)
+		.css('transform', 'rotateZ('+angle+'deg)')
+		.click(function(event){
+			event.preventDefault();
+
+			$(this).hide();
+		});
+	}
 
 	// SI ON VEUT UN REDIMENTIONNEMENT AUTOMATIQUE LE SCRIPT EST UN PEU PLUS COMPLEXE :
 	// cf http://jscrollpane.kelvinluck.com/fullpage_scroll.html
@@ -75,82 +102,83 @@
 
 <body>
 
+<div id="manifeste">
+	<h2 class="soustitre">Éditions des formes</h2>
+	<ol type="I">
+		<li>des formes imprimées</li>
+		<li>des formes multimédias</li>
+		<li>des formes ergonomiques</li>
+		<li>des formes surprenantes</li>
+		<li>des formes cohérentes</li>
+		<li>des formes à voir et à lire</li>
+		<li>des formes artistiques</li>
+		<li>des formes éditoriales</li>
+		<li>des formes architecturales</li>
+		<li>des formes dans l’espace</li>
+		<li>des formes expérimentales</li>
+		<li>des formes de formats</li>
+		<li>des formes artisanales</li>
+		<li>des formes industrielles</li>
+		<li>des formes hybrides</li>
+		<li>des formes à réinventer</li>
+		<li>des formes gracieuses</li>
+		<li>des formes libres</li>
+		<li>des formes travaillées</li>
+		<li>des formes sensuelles</li>
+		<li>des formes et du livre !</li>
+	</ol>
+</div>
+
 <div id="gauche" class="panel">
 	<div class="scroll-pane" class="content pane-gauche">
 		<div class="container">
-		<h1>Éditions<br>des formes</h1>
-        
-		<div class="soustitre">
-		INDEX        
+			<h1>Éditions<br>des formes</h1>
+	        
+			<h2 class="soustitre">
+			INDEX        
+			</h2>
+
+			<nav class="menu">
+				<ul>
+	            	<li>10. &thinsp;Livre (vs) Édifice</li>
+	                <li>09. &thinsp;200 livres</li>
+	                <li>08. &thinsp;Sans-titre, 15x23cm</li>
+	                <li>07. &thinsp;Krishnamurti</li>
+					<li>06. &thinsp;Stratégies Obliques</li>
+	            	<li>05. &thinsp;Quant au Livre</li>
+					<li>04. &thinsp;Pages</li>
+					<li><a href="#sms">03. &thinsp;Printed bugs</a>
+	                <li class="sousmenu"><a href="#">No Input Signal</a></li>
+	                <li class="sousmenu"><a href="#">Erreur 404</a></li>
+	                <li class="sousmenu"><a href="#">Page not found</a></li>
+					<li>02. &thinsp;S.M.S 5</li>
+					<li>01. &thinsp;Internet/451</li>
+					<li>00. &thinsp;Mémoires</li>
+	                <li class="sousmenu"><a href="#feuilleter">Li(v)re</a></li>
+	                <li class="sousmenu"><a href="#">Feuilleter/Scroller</a></li>
+				</ul>
+			</nav>   
+
+			<h2 class="soustitre">
+			À PROPOS        
+			</h2>
+	     
+			<p class="textegauche">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
+			<p class="textegauche">pat magna a lorem varius, non tincidunt dolor mollis. Morbi molestie diam ac elit adipiscing congue. Proin purus purus, semper sit amet metus sed, hendrerit condimentum lectus. Quisque accumsan euismod erat accumsan semper. Pellentesque dictum dictum mi, in tempus quam scelerisque sit amet. Etiam blandit sapien ut velit fermentum tincidunt. Mauris quis gravida justo. Etiam vehicula arcu est. Ut dapibus quam ac euismod imperdiet. Cras tortor augue, pharetra et sapien eu, ullamcorper aliquam ligula.Integer urna mi, auctor non cursus a, sodales quis felis. Morbi faucibus, libero quis commodo lobortis, mi neque commodo felis, quis tincidunt nibh massa vel diam. Curabitur sit amet massa odio. Sed sit amet sapien porttitor, euismod velit rutrum, sollicitudin nunc.
+			<p class="textegauche">atis. Mauris dictum vestibulum eros, ac consequat libero fringilla eget. Vestibulum dictum, nisi non ullamcorper varius, erat turpis viverra leo, sed imperdiet est urna vitae dolor. Sed ligula libero, dapibus ut ipsum a, pretium facilisis sem. Suspendisse blandit sit amet lacus at tincidunt. Sed sed dui eu ligula mollis lobortis. Phasellus non luctus erat.
+				Curabitur id fermentum purus, eu mattis orci. Fusce iacu</p>
+			<p class="textegauche">lis magna id justo gravida cursus. Duis nec venenatis mauris. Etiam eget facilisis tortor. Aenean bibendum accumsan convallis. Ut pretium mollis ante vel cursus. Fusce porta diam risus. Vivamus gravida felis sit amet urna pretium posuere. Ut convallis, lectus semper tempus rutrum, nisl ante facilisis sapien, quis vulputate quam sapien in lorem. Cras convallis, odio convallis vehicula iaculis, urna elit pulvinar leo, id ultrices nibh felis eget diam. Donec suscipit vel mi vitae iaculis. Proin vestibulum volutpat rhoncus. Duis semper sollicitudin orci ut dictu</p>
+
+			<h2 class="soustitre"><a href="#" class="showManifest">Manifeste</a></h2>
+
+			<h2 class="soustitre">Contact</h2>
+
+			<p class="textegauche">
+			<a href="mailto:contact@editionsdesformes.net">contact@editionsdesformes.net</a><br>
+			Alban Leven : 06.38.22.40.33<br>
+			Valentin Robinet : 06.77.55.16.57</p>
 		</div>
-
-		<nav class="menu">
-			<ul>
-            	<li>10. &thinsp;Livre (vs) Édifice</li>
-                <li>09. &thinsp;200 livres</li>
-                <li>08. &thinsp;Sans-titre, 15x23cm</li>
-                <li>07. &thinsp;Krishnamurti</li>
-				<li>06. &thinsp;Stratégies Obliques</li>
-            	<li>05. &thinsp;Quant au Livre</li>
-				<li>04. &thinsp;Pages</li>
-				<li><a href="#sms">03. &thinsp;Printed bugs</a>
-                <li class="sousmenu"><a href="#">No Input Signal</a></li>
-                <li class="sousmenu"><a href="#">Erreur 404</a></li>
-                <li class="sousmenu"><a href="#">Page not found</a></li>
-				<li>02. &thinsp;S.M.S 5</li>
-				<li>01. &thinsp;Internet/451</li>
-				<li>00. &thinsp;Mémoires</li>
-                <li class="sousmenu"><a href="#feuilleter">Li(v)re</a></li>
-                <li class="sousmenu"><a href="#">Feuilleter/Scroller</a></li>
-			</ul>
-		</nav>   
-
-		<div class="soustitre">
-		À PROPOS        
-		</div>
-     
-		<p class="textegauche">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
-		<p class="textegauche">pat magna a lorem varius, non tincidunt dolor mollis. Morbi molestie diam ac elit adipiscing congue. Proin purus purus, semper sit amet metus sed, hendrerit condimentum lectus. Quisque accumsan euismod erat accumsan semper. Pellentesque dictum dictum mi, in tempus quam scelerisque sit amet. Etiam blandit sapien ut velit fermentum tincidunt. Mauris quis gravida justo. Etiam vehicula arcu est. Ut dapibus quam ac euismod imperdiet. Cras tortor augue, pharetra et sapien eu, ullamcorper aliquam ligula.Integer urna mi, auctor non cursus a, sodales quis felis. Morbi faucibus, libero quis commodo lobortis, mi neque commodo felis, quis tincidunt nibh massa vel diam. Curabitur sit amet massa odio. Sed sit amet sapien porttitor, euismod velit rutrum, sollicitudin nunc.
-		<p class="textegauche">atis. Mauris dictum vestibulum eros, ac consequat libero fringilla eget. Vestibulum dictum, nisi non ullamcorper varius, erat turpis viverra leo, sed imperdiet est urna vitae dolor. Sed ligula libero, dapibus ut ipsum a, pretium facilisis sem. Suspendisse blandit sit amet lacus at tincidunt. Sed sed dui eu ligula mollis lobortis. Phasellus non luctus erat.
-			Curabitur id fermentum purus, eu mattis orci. Fusce iacu</p>
-		<p class="textegauche">lis magna id justo gravida cursus. Duis nec venenatis mauris. Etiam eget facilisis tortor. Aenean bibendum accumsan convallis. Ut pretium mollis ante vel cursus. Fusce porta diam risus. Vivamus gravida felis sit amet urna pretium posuere. Ut convallis, lectus semper tempus rutrum, nisl ante facilisis sapien, quis vulputate quam sapien in lorem. Cras convallis, odio convallis vehicula iaculis, urna elit pulvinar leo, id ultrices nibh felis eget diam. Donec suscipit vel mi vitae iaculis. Proin vestibulum volutpat rhoncus. Duis semper sollicitudin orci ut dictu</p>
-
-<div class="soustitre">
-MANIFESTE        
-</div>
-
-<ol type=I class="manifeste">
-<li>des formes imprimées
-<li>des formes multimédias
-<li>des formes ergonomiques
-<li>des formes surprenantes
-<li>des formes cohérentes
-<li>des formes à voir et à lire
-<li>des formes artistiques
-<li>des formes éditoriales
-<li>des formes architecturales
-<li>des formes dans l’espace
-<li>des formes expérimentales
-<li>des formes de formats
-<li>des formes artisanales
-<li>des formes industrielles
-<li>des formes hybrides
-<li>des formes à réinventer
-<li>des formes gracieuses
-<li>des formes libres
-<li>des formes travaillées
-<li>des formes sensuelles
-</ol>
-
-<div class="soustitre">
-CONTACT        
-</div>
-<p class="textegauche">
-<a href="mailto:contact@editionsdesformes.net">contact@editionsdesformes.net</a></br>
-Alban Leven : 06.38.22.40.33</br>
-Valentin Robinet : 06.77.55.16.57
-</div>
-</div>
+	</div>
 </div>
 
 <div id="droite" class="panel">

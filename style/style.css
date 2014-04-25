@@ -1,4 +1,7 @@
-body { margin: 0; }
+body {
+	margin: 0;
+	font-family:PxGrotesk-Regular;
+}
 .panel {
 	position: fixed;
 	top: 0;
@@ -6,15 +9,10 @@ body { margin: 0; }
 	overflow:hidden;
 	overflow-y:auto;
 }
-#gauche { left: 0; right:50%;}
+#gauche { left: 0; right:50%; z-index: 1;}
 
 
-#droite {
-	left: 50%;
-	right:0;
-	background: black;
-	color:white;
-}
+#droite { left: 50%;right:0;background: black;color:white;z-index: 2; }
 
 .content { margin: 50px; }
 
@@ -52,37 +50,55 @@ body { margin: 0; }
  }	
  
 .soustitre{
-	font-family:PxGroteskRegular;
  	font-size:18px;
+ 	text-transform: uppercase;
 }
 
 .menu{
-	font-family:PxGroteskRegular;
  	font-size:18px;
 	margin-left:0px;
 	max-width:500px;
 }
 .sousmenu{
-	font-family:PxGroteskRegular;
  	font-size:18px;
 	margin-left:35px;
 	max-width:500px;
 }
 
 ul { 
-list-style-type: none; 
+	list-style-type: none; 
 }
 
 .textegauche{
-	font-family:PxGroteskRegular;
  	font-size:18px;
 	margin-left:30px;
 	max-width:500px;
 }
 
-.manifeste{
-	font-family:PxGroteskRegular;
+#manifeste{
  	font-size:18px;
-	margin-left:35px;
-	max-width:500px;
+ 	width: 400px;
+ 	z-index: 3;
+ 	position: fixed;
+ 	background: white;
+ 	color: blue;
+ 	border: solid 7px blue;
+ 	padding: 20px;
 }
+
+#manifeste h2{
+	margin: 0 0 1em;
+	text-transform: uppercase;
+}
+
+#manifeste ol{
+	margin: 0;
+	margin-left:35px;
+}
+
+#manifeste ol li:last-child{
+	margin-top:1em;
+	list-style: none;
+}
+
+

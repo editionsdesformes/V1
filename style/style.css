@@ -81,9 +81,14 @@ ul {
  	z-index: 3;
  	position: fixed;
  	background: white;
- 	color: blue;
- 	border: solid 7px blue;
+ 	color: rgb(0,0,255);
+ 	border: solid 7px rgb(0,0,255);
  	padding: 20px;
+}
+
+#manifeste:hover{
+	border-color:rgb(0,0,200);
+	color:rgb(0,0,200);
 }
 
 #manifeste h2{

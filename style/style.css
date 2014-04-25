@@ -56,6 +56,23 @@ body { margin: 0; }
  	font-size:18px;
 }
 
+.menu{
+	font-family:PxGroteskRegular;
+ 	font-size:18px;
+	margin-left:0px;
+	max-width:500px;
+}
+.sousmenu{
+	font-family:PxGroteskRegular;
+ 	font-size:18px;
+	margin-left:35px;
+	max-width:500px;
+}
+
+ul { 
+list-style-type: none; 
+}
+
 .textegauche{
 	font-family:PxGroteskRegular;
  	font-size:18px;
@@ -63,10 +80,9 @@ body { margin: 0; }
 	max-width:500px;
 }
 
-#img1, #img2, #img3, #img4, #img5, #img6 {
-    height: 100px;
-}
- 
-#espace-bas {
-    height: 240px;
+.manifeste{
+	font-family:PxGroteskRegular;
+ 	font-size:18px;
+	margin-left:35px;
+	max-width:500px;
 }

@@ -41,12 +41,17 @@ body {
  	margin: 30px;
  }
 
+/**
+ * GAUCHE
+ */
+ 
  h1
  {
- 	font-family:PxGrotesk-Bold;
- 	font-size:60px;
- 	text-align:left;
- 	line-height: 55px;	
+ 	font-family:PxGrotesk-Regular;
+ 	font-size:50px;
+ 	text-align:center;
+ 	line-height: 50px;
+	margin-bottom: 50px;	
  }	
  
 .soustitre{
@@ -56,11 +61,18 @@ body {
 
 .menu{
  	font-size:18px;
+	line-height:23px;
 	margin-left:0px;
 	max-width:500px;
 }
+
+#gauche a:link {color: black ; text-decoration:none ;}
+#gauche a:hover {color: black ; text-decoration: none; border-bottom : 3px solid black;}
+#gauche a:visited {color: black;}
+
 .sousmenu{
  	font-size:18px;
+	line-height:23px;
 	margin-left:35px;
 	max-width:500px;
 }
@@ -71,13 +83,15 @@ ul {
 
 .textegauche{
  	font-size:18px;
+	line-height:23px;
 	margin-left:30px;
 	max-width:500px;
 }
 
 #manifeste{
  	font-size:18px;
- 	width: 400px;
+	line-height:22px;
+ 	width: 360px;
  	z-index: 3;
  	position: fixed;
  	background: white;
@@ -87,8 +101,8 @@ ul {
 }
 
 #manifeste:hover{
-	border-color:rgb(0,0,200);
-	color:rgb(0,0,200);
+	border-color:rgb(255,0,0);
+	color:rgb(255,0,0);
 }
 
 #manifeste h2{
@@ -106,4 +120,22 @@ ul {
 	list-style: none;
 }
 
+/**
+ * DROITE
+ */
 
+.soustitredroite{
+ 	font-size:18px;
+ 	text-transform: uppercase;
+}
+
+.span{
+border-bottom: 3px solid white;
+}
+
+.textedroite{
+ 	font-size:18px;
+	line-height:23px;
+	margin-left:30px;
+	max-width:500px;
+}

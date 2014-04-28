@@ -16,14 +16,14 @@
 
 .bx-wrapper {
 	position: relative;
-	margin: 0 auto 60px;
+	margin: 0 auto 0px;
 	padding: 0;
 	*zoom: 1;
 }
 
 .bx-wrapper img {
 	max-width: 100%;
-	display: block;
+    display: inline;
 }
 
 /** THEME
@@ -36,7 +36,7 @@
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
 	position: absolute;
-	bottom: -33px;
+	bottom: -30px;
 	width: 100%;
 }
 
@@ -57,9 +57,10 @@
 /* PAGER */
 
 .bx-wrapper .bx-pager {
-	text-align: left;
+	font-family:PxGrotesk-Regular;
+	font-size:14px;
+	text-align: right;
 	padding-top: 0px;
-	font-weight: bold;
 }
 
 .bx-wrapper .bx-pager .bx-pager-item,

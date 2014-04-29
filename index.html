@@ -1,37 +1,42 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
+	<meta charset="UTF-8">
 
-<title>Éditions des formes</title>
+	<title>Éditions des formes</title>
 
-<!-- Favicon -->
-<link rel="icon" type="image/ico" href="images/favicon.ico" />
-    
-<!-- WebInk -->
-<link href="//fnt.webink.com/wfs/webink.css/?project=9A34B3D8-09EB-46BE-B58D-6F5EFF3D6036&fonts=F06E7859-C7AE-7BC9-DA36-BA8CCFC1BFEC:f=PxGrotesk-BoldIta,A662D665-BC20-B3FD-B44C-A57A206F328C:f=PxGrotesk-Light,93F90203-3D60-8B7B-9F87-7B585880EEF9:f=PxGrotesk-Regular,8F3750F8-E299-7CFD-2069-7AA8125652CE:f=PxGrotesk-RegularIta,B0CBCA70-418F-4482-421C-88B41ECCD5FA:f=PxGrotesk-Bold,1AEC341F-67D1-6F1C-2974-B45A4BD3C837:f=PxGrotesk-LightIta,933D8DC6-8EC9-A6BD-33DE-EB816A44105A:f=PxGrotesk-Screen" rel="stylesheet" type="text/css" />
+	<!-- Favicon -->
+	<link rel="icon" type="image/ico" href="images/favicon.ico" />
 
-
-
-<!-- styles needed by jScrollPane -->
-<link type="text/css"  href="style/jquery.jscrollpane.css" rel="stylesheet" media="all" />
-<link rel="stylesheet" href="style/style.css" />
-
-        
-<!-- latest jQuery direct from google's CDN -->
-<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
-<script type="text/javascript" src="script/jquery-1.11.0.min.js" ></script><!-- Insertion de la bibliotheque jQuery -->
-<script src="script/jquery-migrate-1.2.1.min.js"></script>
-
-<!-- the mousewheel plugin - optional to provide mousewheel support -->
-<script type="text/javascript" src="script/jquery.mousewheel.js"></script>
-
-<!-- the jScrollPane script -->
-<script type="text/javascript" src="script/jquery.jscrollpane.min.js"></script>
-<!-- script scroll ancres -->
+	<!-- WebInk -->
+	<link href="//fnt.webink.com/wfs/webink.css/?project=9A34B3D8-09EB-46BE-B58D-6F5EFF3D6036&fonts=F06E7859-C7AE-7BC9-DA36-BA8CCFC1BFEC:f=PxGrotesk-BoldIta,A662D665-BC20-B3FD-B44C-A57A206F328C:f=PxGrotesk-Light,93F90203-3D60-8B7B-9F87-7B585880EEF9:f=PxGrotesk-Regular,8F3750F8-E299-7CFD-2069-7AA8125652CE:f=PxGrotesk-RegularIta,B0CBCA70-418F-4482-421C-88B41ECCD5FA:f=PxGrotesk-Bold,1AEC341F-67D1-6F1C-2974-B45A4BD3C837:f=PxGrotesk-LightIta,933D8DC6-8EC9-A6BD-33DE-EB816A44105A:f=PxGrotesk-Screen" rel="stylesheet" type="text/css" />
 
 
-<script type="text/javascript" id="sourcecode">
+
+	<!-- styles needed by jScrollPane -->
+	<link rel="stylesheet" href="style/jquery.jscrollpane.css" media="all" />
+	<!-- bxSlider CSS file -->
+	<link rel="stylesheet" href="style/jquery.bxslider.css" />
+	<link rel="stylesheet" href="style/style.css" />
+
+
+	<!-- latest jQuery direct from google's CDN -->
+	<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+	<script type="text/javascript" src="script/jquery-1.11.0.min.js" ></script><!-- Insertion de la bibliotheque jQuery -->
+	<script type="text/javascript" src="script/jquery-migrate-1.2.1.min.js"></script>
+
+	<!-- the mousewheel plugin - optional to provide mousewheel support -->
+	<script type="text/javascript" src="script/jquery.mousewheel.js"></script>
+
+	<!-- the jScrollPane script -->
+	<script type="text/javascript" src="script/jquery.jscrollpane.min.js"></script>
+	<!-- script scroll ancres -->
+
+	<!-- bxSlider Javascript file -->
+	<script type="text/javascript" src="script/jquery.bxslider.min.js"></script>
+
+
+	<script type="text/javascript" id="sourcecode">
 
 	$(document).ready(function(){
 		manifeste();
@@ -40,6 +45,17 @@
 			event.preventDefault();
 
 			manifeste();
+		});
+
+		$('.bxslider').bxSlider({
+			speed: 150,
+			mode: 'horizontal',
+			pager: true,
+			pagerType: 'short',
+			pagerLocation: 'bottom',
+			pagerShortSeparator: ' sur ',
+			startSlide: 0,
+			adaptiveHeight: true,
 		});
 	});
 
@@ -76,7 +92,7 @@
 					isResizing = true;
 
 					
-					$('.scroll-pane').jScrollPane();
+					$('.scroll-pane').jScrollPane({contentWidth: '0px'});
 
 					// POUR GERER LE SCROLL AUTOMATIQUE
 					var pane = $('#droite .scroll-pane');
@@ -95,184 +111,161 @@
 					
 				}
 			}
-		).trigger('resize');
+			).trigger('resize');
 	});
 
-</script>
+	</script>
 
-<!-- jQuery library (served from Google) -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<!-- bxSlider Javascript file -->
-<script src="/script/jquery.bxslider.min.js"></script>
-<!-- bxSlider CSS file -->
-<link href="/style/jquery.bxslider.css" rel="stylesheet" />
 
 </head>
 
 <body>
 
-<div id="manifeste">
-	<h2 class="soustitre">Éditions des formes</h2>
-	<ol type="I">
-		<li>des formes imprimées</li>
-		<li>des formes multimédias</li>
-		<li>des formes ergonomiques</li>
-		<li>des formes surprenantes</li>
-		<li>des formes cohérentes</li>
-		<li>des formes à voir et à lire</li>
-		<li>des formes artistiques</li>
-		<li>des formes éditoriales</li>
-		<li>des formes architecturales</li>
-		<li>des formes dans l’espace</li>
-		<li>des formes expérimentales</li>
-		<li>des formes de formats</li>
-		<li>des formes artisanales</li>
-		<li>des formes industrielles</li>
-		<li>des formes hybrides</li>
-		<li>des formes à réinventer</li>
-		<li>des formes gracieuses</li>
-		<li>des formes libres</li>
-		<li>des formes travaillées</li>
-		<li>des formes sensuelles</li>
-		<li>des formes et du livre !</li>
-	</ol>
-</div>
-
-<div id="gauche" class="panel">
-	<div class="scroll-pane" class="content pane-gauche">
-		<div class="container">
-			<h1>Éditions<br>des formes</h1>
-	        
-			<h2 class="soustitre">
-			INDEX        
-			</h2>
-
-			<nav class="menu">
-				<ul>
-	            	<li>10. &thinsp;<a href="#livrevsedifice">Livre (vs) Édifice</a></li>
-	                <li>09. &thinsp;<a href="#200livres">200 livres</a></li>
-	                <li>08. &thinsp;<a href="#sanstitre">Sans-titre, 15x23cm</a></li>
-	                <li>07. &thinsp;<a href="#krishnamurti">Krishnamurti</a></li>
-					<li>06. &thinsp;<a href="#strategiesobliques">Stratégies Obliques</a></li>
-	            	<li>05. &thinsp;<a href="#quantaulivre">Quant au Livre</a></li>
-					<li>04. &thinsp;<a href="#pages">Pages</a></li>
-					<li>03. &thinsp;Printed bugs</li>
-	                <li class="sousmenu"><a href="#noinputsignal">No Input Signal</a></li>
-	                <li class="sousmenu"><a href="#erreur404">Erreur 404</a></li>
-	                <li class="sousmenu"><a href="#pagenotfound">Page not found</a></li>
-					<li>02. &thinsp;<a href="#sms5">S.M.S 5</a></li>
-					<li>01. &thinsp;<a href="#internet451">Internet/451</a></li>
-					<li>00. &thinsp;Mémoires</li>
-	                <li class="sousmenu"><a href="#livre">Li(v)re</a></li>
-	                <li class="sousmenu"><a href="#feuilleterscroller">Feuilleter/Scroller</a></li>
-				</ul>
-			</nav>   
-
-			<h2 class="soustitre">
-			À PROPOS        
-			</h2>
-	     
-			<p class="textegauche">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
-			<p class="textegauche">pat magna a lorem varius, non tincidunt dolor mollis. Morbi molestie diam ac elit adipiscing congue. Proin purus purus, semper sit amet metus sed, hendrerit condimentum lectus. Quisque accumsan euismod erat accumsan semper. Pellentesque dictum dictum mi, in tempus quam scelerisque sit amet. Etiam blandit sapien ut velit fermentum tincidunt. Mauris quis gravida justo. Etiam vehicula arcu est. Ut dapibus quam ac euismod imperdiet. Cras tortor augue, pharetra et sapien eu, ullamcorper aliquam ligula.Integer urna mi, auctor non cursus a, sodales quis felis. Morbi faucibus, libero quis commodo lobortis, mi neque commodo felis, quis tincidunt nibh massa vel diam. Curabitur sit amet massa odio. Sed sit amet sapien porttitor, euismod velit rutrum, sollicitudin nunc.
-			<p class="textegauche">atis. Mauris dictum vestibulum eros, ac consequat libero fringilla eget. Vestibulum dictum, nisi non ullamcorper varius, erat turpis viverra leo, sed imperdiet est urna vitae dolor. Sed ligula libero, dapibus ut ipsum a, pretium facilisis sem. Suspendisse blandit sit amet lacus at tincidunt. Sed sed dui eu ligula mollis lobortis. Phasellus non luctus erat.
-				Curabitur id fermentum purus, eu mattis orci. Fusce iacu</p>
-			<p class="textegauche">lis magna id justo gravida cursus. Duis nec venenatis mauris. Etiam eget facilisis tortor. Aenean bibendum accumsan convallis. Ut pretium mollis ante vel cursus. Fusce porta diam risus. Vivamus gravida felis sit amet urna pretium posuere. Ut convallis, lectus semper tempus rutrum, nisl ante facilisis sapien, quis vulputate quam sapien in lorem. Cras convallis, odio convallis vehicula iaculis, urna elit pulvinar leo, id ultrices nibh felis eget diam. Donec suscipit vel mi vitae iaculis. Proin vestibulum volutpat rhoncus. Duis semper sollicitudin orci ut dictu</p>
-
-			<h2 class="soustitre"><a href="#" class="showManifest">Manifeste</a></h2>
-
-			<h2 class="soustitre">Contact</h2>
-
-			<p class="textegauche">
-			<a href="mailto:contact@editionsdesformes.net">contact@editionsdesformes.net</a><br>
-			Alban Leven : 06.38.22.40.33<br>
-			Valentin Robinet : 06.77.55.16.57</p>
-		</div>
+	<div id="manifeste">
+		<h2 class="soustitre">Éditions des formes</h2>
+		<ol type="I">
+			<li>des formes imprimées</li>
+			<li>des formes multimédias</li>
+			<li>des formes ergonomiques</li>
+			<li>des formes surprenantes</li>
+			<li>des formes cohérentes</li>
+			<li>des formes à voir et à lire</li>
+			<li>des formes artistiques</li>
+			<li>des formes éditoriales</li>
+			<li>des formes architecturales</li>
+			<li>des formes dans l’espace</li>
+			<li>des formes expérimentales</li>
+			<li>des formes de formats</li>
+			<li>des formes artisanales</li>
+			<li>des formes industrielles</li>
+			<li>des formes hybrides</li>
+			<li>des formes à réinventer</li>
+			<li>des formes gracieuses</li>
+			<li>des formes libres</li>
+			<li>des formes travaillées</li>
+			<li>des formes sensuelles</li>
+			<li>des formes et du livre !</li>
+		</ol>
 	</div>
-</div>
 
-<div id="droite" class="panel">
-	<div class="scroll-pane" class="content pane-droite">
-		<div class="container">
-        
-<h2 id="livrevsedifice" class="soustitredroite">10. Livre (vs) Édifice</h2>
-        
-		<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
-      
-<div class="projet">  
-  <ul class="bxslider">
-  	<li><img src="/images/test/01.jpg" /></li>
-  	<li><img src="/images/test/02.jpg" /></li>
-  	<li><img src="/images/test/03.jpg" /></li>
-  </ul>
-</div>
+	<div id="gauche" class="panel">
+		<div class="scroll-pane" class="content pane-gauche">
+			<div class="container">
+				<h1>Éditions<br>des formes</h1>
 
-<p class="legende">
-104 pages, 14 x 20cm </br>couverture souple,</br>impression Noir et Blanc
-</p>
+				<h2 class="soustitre">
+					INDEX        
+				</h2>
 
-<p class="acheter">
-<a href="Adresse ou URL"> commander sur Blurb </a>
-</p>
-		
-<h2 id="200livres" class="soustitredroite">09. 200 livres</h2>
-        
-		<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
-   
-<h2 id="sanstitre" class="soustitredroite">08. Sans-titre, 15x23cm</h2>
-        
-		<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
-      
-<h2 id="krishnamurti" class="soustitredroite">07. Krishnamurti</h2>
-        
-		<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
-        
-<h2 id="strategiesobliques" class="soustitredroite">06. Strastégies Obliques</h2>
-        
-		<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
-        
-<h2 id="quantaulivre" class="soustitredroite">05. Quant au Livre</h2>
-        
-		<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
-        
-<h2 id="pages" class="soustitredroite">04. Pages</h2>
-        
-		<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
-        
-<h2 id="noinputsign" class="soustitredroite">03. Printed Bugs</h2>
-        
-		<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
-        
-<h2 id="sms5" class="soustitredroite">02. S.M.S 5</h2>
-        
-		<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
-        
-<h2 id="internet451" class="soustitredroite">01. Internet/451</h2>
-        
-		<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
-        
-<h2 id="livre" class="soustitredroite">00. Mémoire</h2>
-        
-		<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
-       
+				<nav class="menu">
+					<ul>
+						<li>10. &thinsp;<a href="#livrevsedifice">Livre (vs) Édifice</a></li>
+						<li>09. &thinsp;<a href="#200livres">200 livres</a></li>
+						<li>08. &thinsp;<a href="#sanstitre">Sans-titre, 15x23cm</a></li>
+						<li>07. &thinsp;<a href="#krishnamurti">Krishnamurti</a></li>
+						<li>06. &thinsp;<a href="#strategiesobliques">Stratégies Obliques</a></li>
+						<li>05. &thinsp;<a href="#quantaulivre">Quant au Livre</a></li>
+						<li>04. &thinsp;<a href="#pages">Pages</a></li>
+						<li>03. &thinsp;Printed bugs</li>
+						<li class="sousmenu"><a href="#noinputsignal">No Input Signal</a></li>
+						<li class="sousmenu"><a href="#erreur404">Erreur 404</a></li>
+						<li class="sousmenu"><a href="#pagenotfound">Page not found</a></li>
+						<li>02. &thinsp;<a href="#sms5">S.M.S 5</a></li>
+						<li>01. &thinsp;<a href="#internet451">Internet/451</a></li>
+						<li>00. &thinsp;Mémoires</li>
+						<li class="sousmenu"><a href="#livre">Li(v)re</a></li>
+						<li class="sousmenu"><a href="#feuilleterscroller">Feuilleter/Scroller</a></li>
+					</ul>
+				</nav>   
+
+				<h2 class="soustitre">
+					À PROPOS        
+				</h2>
+
+				<p class="textegauche">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
+				<p class="textegauche">pat magna a lorem varius, non tincidunt dolor mollis. Morbi molestie diam ac elit adipiscing congue. Proin purus purus, semper sit amet metus sed, hendrerit condimentum lectus. Quisque accumsan euismod erat accumsan semper. Pellentesque dictum dictum mi, in tempus quam scelerisque sit amet. Etiam blandit sapien ut velit fermentum tincidunt. Mauris quis gravida justo. Etiam vehicula arcu est. Ut dapibus quam ac euismod imperdiet. Cras tortor augue, pharetra et sapien eu, ullamcorper aliquam ligula.Integer urna mi, auctor non cursus a, sodales quis felis. Morbi faucibus, libero quis commodo lobortis, mi neque commodo felis, quis tincidunt nibh massa vel diam. Curabitur sit amet massa odio. Sed sit amet sapien porttitor, euismod velit rutrum, sollicitudin nunc.</p>
+				<p class="textegauche">atis. Mauris dictum vestibulum eros, ac consequat libero fringilla eget. Vestibulum dictum, nisi non ullamcorper varius, erat turpis viverra leo, sed imperdiet est urna vitae dolor. Sed ligula libero, dapibus ut ipsum a, pretium facilisis sem. Suspendisse blandit sit amet lacus at tincidunt. Sed sed dui eu ligula mollis lobortis. Phasellus non luctus erat. Curabitur id fermentum purus, eu mattis orci. Fusce iacu</p>
+				<p class="textegauche">lis magna id justo gravida cursus. Duis nec venenatis mauris. Etiam eget facilisis tortor. Aenean bibendum accumsan convallis. Ut pretium mollis ante vel cursus. Fusce porta diam risus. Vivamus gravida felis sit amet urna pretium posuere. Ut convallis, lectus semper tempus rutrum, nisl ante facilisis sapien, quis vulputate quam sapien in lorem. Cras convallis, odio convallis vehicula iaculis, urna elit pulvinar leo, id ultrices nibh felis eget diam. Donec suscipit vel mi vitae iaculis. Proin vestibulum volutpat rhoncus. Duis semper sollicitudin orci ut dictu</p>
+
+				<h2 class="soustitre"><a href="#" class="showManifest">Manifeste</a></h2>
+
+				<h2 class="soustitre">Contact</h2>
+
+				<p class="textegauche">
+					<a href="mailto:contact@editionsdesformes.net">contact@editionsdesformes.net</a><br>
+					Alban Leven : 06.38.22.40.33<br>
+					Valentin Robinet : 06.77.55.16.57</p>
+				</div>
+			</div>
 		</div>
-	</div>
-</div>
 
-<script type="text/javascript">
-var $j = jQuery.noConflict();
-           		$j(document).ready(function(){
-               		$j('.bxslider').bxSlider({
-                   		speed: 150,
-                   		mode: 'horizontal',
-                   		pager: true,
-						pagerType: 'short',
-						pagerLocation: 'bottom',
-						pagerShortSeparator: ' sur ',
-						startSlide: 0,
-               });
-            });
-</script>
+		<div id="droite" class="panel">
+			<div class="scroll-pane" class="content pane-droite">
+				<div class="container">
+
+					<h2 id="livrevsedifice" class="soustitredroite">10. <span>Livre (vs) Édifice</span></h2>
+
+					<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
+
+					<div class="projet">  
+						<div class="bxslider">
+							<div class="slide"><img src="images/test/01.jpg" width="682" height="511" /></div>
+							<div class="slide"><img src="images/test/02.jpg" width="682" height="511" /></div>
+							<div class="slide"><img src="images/test/03.jpg" width="682" height="511" /></div>
+						</div>
+					</div>
+
+					<p class="legende">
+						104 pages, 14 x 20cm </br>couverture souple,</br>impression Noir et Blanc
+					</p>
+
+					<p class="acheter">
+						<a href="Adresse ou URL"> commander sur Blurb </a>
+					</p>
+
+					<h2 id="200livres" class="soustitredroite">09. <span>200 livres</span></h2>
+
+					<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
+
+					<h2 id="sanstitre" class="soustitredroite">08. <span>Sans-titre, 15x23cm</span></h2>
+
+					<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
+
+					<h2 id="krishnamurti" class="soustitredroite">07. <span>Krishnamurti</span></h2>
+
+					<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
+
+					<h2 id="strategiesobliques" class="soustitredroite">06. <span>Strastégies Obliques</span></h2>
+
+					<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
+
+					<h2 id="quantaulivre" class="soustitredroite">05. <span>Quant au Livre</span></h2>
+
+					<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
+
+					<h2 id="pages" class="soustitredroite">04. <span>Pages</span></h2>
+
+					<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
+
+					<h2 id="noinputsign" class="soustitredroite">03. <span>Printed Bugs</span></h2>
+
+					<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
+
+					<h2 id="sms5" class="soustitredroite">02. <span>S.M.S 5</span></h2>
+
+					<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
+
+					<h2 id="internet451" class="soustitredroite">01. <span>Internet/451</span></h2>
+
+					<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
+
+					<h2 id="livre" class="soustitredroite">00. <span>Mémoire</span></h2>
+
+					<p class="textedroite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis aliquam tincidunt. Sed adipiscing purus nibh, non viverra metus bibendum euismod. Duis volut</p>
+
+				</div>
+			</div>
+		</div>
 
 </body>
-
 </html>

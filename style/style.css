@@ -50,7 +50,7 @@ color:white;
  #droite .jspVerticalBar{border-left: solid 2px white;}
  #droite .jspTrack{background: white;}
  #droite .jspDrag{background: AppWorkspace;}
- .jspVerticalBar{width: 12px;}
+ .jspVerticalBar{width: 14px;}
 
 
 /**
@@ -80,7 +80,13 @@ color:white;
 .soustitre{
  	font-size:18px;
  	text-transform: uppercase;
+	letter-spacing:2px;
 }
+
+/* réglages lien pour manifeste  */
+.soustitre a:link {color: black ; text-decoration:none ;}
+.soustitre a:hover {color: black ; text-decoration: none; border-bottom : 3px solid black;}
+.soustitre a:visited {color: black;}
 
 .menu{
  	font-size:18px;
@@ -89,9 +95,10 @@ color:white;
 	max-width:500px;
 }
 
-#gauche a:link {color: black ; text-decoration:none ;}
-#gauche a:hover {color: black ; text-decoration: none; border-bottom : 3px solid black;}
-#gauche a:visited {color: black;}
+/* réglages lien pour menu  */
+.menu a:link {color: black ; text-decoration:none ;}
+.menu a:hover {color: black ; text-decoration: none; border-bottom : 3px solid black;}
+.menu a:visited {color: black;}
 
 .sousmenu{
  	font-size:18px;
@@ -107,9 +114,36 @@ ul {
 .textegauche{
  	font-size:18px;
 	line-height:23px;
-	margin-left:30px;
+	margin-left:35px;
 	max-width:500px;
 }
+
+.contact{
+ 	font-size:18px;
+	line-height:23px;
+	margin-left:35px;
+	max-width:500px;
+	margin-bottom:0px;
+}
+
+/* réglages lien pour contact mail  */
+.contact a:link {color: black ; text-decoration:none ;}
+.contact a:hover {color: black ; text-decoration: none; border-bottom : 3px solid black;}
+.contact a:visited {color: black;}
+
+.social{
+ 	font-size:14px;
+	line-height:23px;
+	max-width:500px;
+	margin-left:35px;
+	margin-bottom:20px;
+	float:left;
+}
+
+/* réglages lien pour facebook et tumblr  */
+.social a:link {color: black ; text-decoration:none; border : 2px solid black; padding: 1px 7px 2px 7px;}
+.social a:hover {color: AppWorkspace ; text-decoration: none; border : 2px solid AppWorkspace; padding: 1px 7px 2px 7px;}
+.social a:visited {color: black;}
 
 #manifeste{
  	font-size:18px;
@@ -151,17 +185,18 @@ ul {
 	color: black;
  	font-size:18px;
  	text-transform: uppercase;
+	letter-spacing:2px;
 }
 
 .soustitredroite span{
-border-bottom: 3px solid white;
+border-bottom: 3px solid black;
 }
 
 .textedroite{
 	color: black;
  	font-size:18px;
 	line-height:23px;
-	margin-left:30px;
+	margin-left:45px;
 	max-width:500px;
 }
 
@@ -169,14 +204,14 @@ border-bottom: 3px solid white;
 	color:black;
  	font-size:14px;
 	line-height:18px;
-	margin-left:30px;
+	margin-left:45px;
 	max-width:500px;
 }
 
 .acheter{
  	font-size:14px;
 	line-height:23px;
-	margin-left:30px;
+	margin-left:45px;
 	max-width:500px;
 	margin-bottom:50px;
 }
@@ -188,8 +223,7 @@ border-bottom: 3px solid white;
 
 .projet{
 	max-width: 494px;
-	margin-left: 30px;
-	border: solid #fff 3px;
+	margin-left: 45px;
 }
 
 .projet img{
@@ -199,4 +233,14 @@ border-bottom: 3px solid white;
 div.bxslider,  div.slide{
 	margin:0;
 	padding: 0;
+}
+
+.droits{
+	color:white;
+ 	font-size:14px;
+	text-align:center;
+	line-height:18px;
+	max-width:500px;
+	margin-top:20px;
+	margin-bottom:20px;
 }

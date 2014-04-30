@@ -199,6 +199,10 @@ border-bottom: 3px solid black;
 	max-width:500px;
 }
 
+.textedroite a:link {color: black ; text-decoration:none ; border-bottom : 3px solid black;}
+.textedroite a:hover {color: black ; text-decoration: none; border-bottom : 0px solid black;}
+.textedroite a:visited {color: black;}
+
 .legende{
 	color:black;
  	font-size:14px;

@@ -69,6 +69,10 @@
 			startSlide: 0,
 			adaptiveHeight: true,
 		});
+
+		$('img').load(function(){
+			$('.scroll-pane').jScrollPane({contentWidth: '0px'});
+		});
 	});
 
 
@@ -123,7 +127,7 @@
 					
 				}
 			}
-			).trigger('resize');
+		).trigger('resize');
 	});
 
 	</script>
